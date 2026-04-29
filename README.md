@@ -87,5 +87,5 @@
 
 ## 開發者
 
-Made with 🍀 for Tarshar by Claude  
+🍀 Learn AI with Tarshar 
 2026 春 · 淡碩專學習旅程的一站
