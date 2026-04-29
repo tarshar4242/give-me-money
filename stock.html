@@ -280,6 +280,144 @@ body {
   font-family: "Fraunces", serif; font-size: 18px; font-weight: 500;
 }
 
+/* ========== Entry Plan ========== */
+.entry-plan {
+  display: flex; flex-direction: column; gap: 12px;
+}
+.plan-row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+}
+.plan-cell {
+  background: var(--bg-soft); border: 1px solid var(--line);
+  border-radius: 12px; padding: 16px 18px;
+  position: relative;
+}
+.plan-cell.stop { border-color: rgba(248, 113, 113, 0.25); }
+.plan-cell.take { border-color: rgba(74, 222, 128, 0.25); }
+.plan-label {
+  font-family: "JetBrains Mono", monospace; font-size: 11px;
+  color: var(--text-mute); text-transform: uppercase;
+  letter-spacing: 0.15em; margin-bottom: 8px;
+}
+.plan-value {
+  font-family: "Fraunces", serif; font-size: 26px; font-weight: 500;
+  letter-spacing: -0.02em;
+}
+.plan-meta {
+  font-family: "JetBrains Mono", monospace; font-size: 12px;
+  color: var(--text-soft); margin-top: 4px;
+}
+.plan-rr {
+  display: flex; align-items: center; gap: 14px;
+  flex-wrap: wrap;
+  background: rgba(200, 184, 138, 0.06);
+  border: 1px solid rgba(200, 184, 138, 0.2);
+  border-radius: 10px; padding: 12px 16px;
+  margin-top: 4px;
+}
+.plan-rr .rr-label {
+  font-family: "JetBrains Mono", monospace; font-size: 11px;
+  color: var(--text-mute); text-transform: uppercase; letter-spacing: 0.15em;
+}
+.plan-rr .rr-value {
+  font-family: "Fraunces", serif; font-size: 22px; font-weight: 600;
+  color: var(--accent); letter-spacing: -0.01em;
+}
+.plan-rr .rr-note {
+  font-size: 12px; color: var(--text-soft);
+  font-family: "JetBrains Mono", monospace;
+  margin-left: auto;
+}
+.plan-disclaimer {
+  font-size: 11px; color: var(--text-mute); line-height: 1.6;
+  font-family: "Noto Sans TC", sans-serif;
+  padding-top: 8px; border-top: 1px dashed var(--line);
+  margin-top: 4px;
+}
+
+/* ========== Similar Trades (C3) ========== */
+.similar-summary {
+  background: rgba(200, 184, 138, 0.06);
+  border: 1px solid rgba(200, 184, 138, 0.2);
+  border-radius: 10px; padding: 14px 16px;
+  margin-bottom: 14px;
+}
+.similar-summary-text {
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 14px; color: var(--text); line-height: 1.7;
+}
+.similar-summary-text .hi {
+  color: var(--accent); font-weight: 500;
+}
+.similar-list {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+}
+.similar-card {
+  background: var(--bg-soft); border: 1px solid var(--line);
+  border-radius: 12px; padding: 16px;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.similar-card-head {
+  display: flex; align-items: center; gap: 10px;
+  padding-bottom: 10px; border-bottom: 1px dashed var(--line);
+}
+.similar-rank {
+  font-family: "Fraunces", serif; font-size: 18px;
+  font-style: italic; color: var(--accent); font-weight: 600;
+}
+.similar-date {
+  font-family: "JetBrains Mono", monospace; font-size: 12px;
+  color: var(--text-soft);
+}
+.similar-score {
+  margin-left: auto;
+  font-family: "JetBrains Mono", monospace; font-size: 11px;
+  color: var(--accent);
+  background: rgba(200, 184, 138, 0.1);
+  padding: 3px 8px; border-radius: 999px;
+}
+.similar-snap {
+  display: flex; flex-wrap: wrap; gap: 6px;
+}
+.similar-snap span {
+  font-family: "JetBrains Mono", monospace; font-size: 11px;
+  background: var(--bg); border: 1px solid var(--line);
+  padding: 4px 8px; border-radius: 6px;
+  color: var(--text-soft);
+}
+.similar-result {
+  display: flex; flex-direction: column; gap: 6px;
+}
+.similar-result-row {
+  display: flex; justify-content: space-between;
+  font-family: "JetBrains Mono", monospace; font-size: 12px;
+}
+.similar-result-row .key { color: var(--text-mute); }
+.similar-result-row .val { color: var(--text); }
+.similar-result-row.final {
+  margin-top: 4px; padding-top: 8px;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+}
+.similar-result-row.final .val {
+  font-family: "Fraunces", serif; font-weight: 600;
+  font-size: 16px;
+}
+.similar-empty {
+  padding: 32px; text-align: center;
+  color: var(--text-mute); font-style: italic;
+  font-family: "Noto Sans TC", sans-serif;
+  line-height: 1.8; font-size: 14px;
+}
+.similar-note {
+  margin-top: 14px; padding: 12px 14px;
+  background: var(--bg-soft); border-radius: 8px;
+  font-size: 12px; color: var(--text-soft);
+  line-height: 1.7;
+  font-family: "Noto Sans TC", sans-serif;
+}
+
 /* ========== Backtest Stats ========== */
 .stats-grid {
   display: grid;
@@ -427,6 +565,10 @@ body {
   .trades-table th, .trades-table td { padding: 10px 8px; font-size: 12px; }
   .chart-container { height: 260px; }
   .chart-container.tall { height: 280px; }
+  .plan-row { grid-template-columns: 1fr; }
+  .plan-value { font-size: 22px; }
+  .similar-list { grid-template-columns: 1fr; }
+  .plan-rr .rr-note { margin-left: 0; flex: 1 1 100%; }
 }
 
 /* hide scrollbar on chip rows when scrollable */
@@ -532,6 +674,24 @@ body {
       </div>
       <div class="today-grid" id="todayGrid"></div>
       <div id="signalBanner"></div>
+    </section>
+
+    <!-- ========== 假如今日進場 ========== -->
+    <section class="section">
+      <div class="section-header">
+        <div class="section-title">假如今日進場</div>
+        <div class="section-tag">Entry Plan</div>
+      </div>
+      <div id="entryPlanBox"></div>
+    </section>
+
+    <!-- ========== 歷史相似情境 ========== -->
+    <section class="section">
+      <div class="section-header">
+        <div class="section-title">歷史相似情境</div>
+        <div class="section-tag">Similar Setups in History</div>
+      </div>
+      <div id="similarTradesBox"></div>
     </section>
 
     <!-- ========== 策略對比 (僅 ALL 模式) ========== -->
@@ -915,17 +1075,21 @@ function signalB(data, ind, i) {
 
 // 策略 C：MACD + 布林通道
 // 進場：MACD 黃金交叉 + 收盤站上中線（BB mid）
-// 出場：收盤觸碰上軌 OR MACD 死亡交叉
+// 出場：收盤「真正」觸碰上軌（close >= upper）OR MACD 死亡交叉
 function signalC(data, ind, i) {
   const mid = ind.boll.mid[i], upper = ind.boll.upper[i];
   const close = data[i].close;
   if (mid == null) return null;
   if (macdGolden(ind, i) && close >= mid) return 'BUY';
-  if (close >= upper * 0.99 || macdDeath(ind, i)) return 'SELL';
+  // 修正：必須真正觸碰上軌（不是 99%），避免太早出場
+  if (close >= upper || macdDeath(ind, i)) return 'SELL';
   return null;
 }
 
 const STRATEGY_FN = { A: signalA, B: signalB, C: signalC };
+
+// 最少持有天數（避免一進就出，給策略發酵的時間）
+const MIN_HOLD_DAYS = 3;
 
 // ============================================================
 // 回測引擎
@@ -933,12 +1097,11 @@ const STRATEGY_FN = { A: signalA, B: signalB, C: signalC };
 function backtest(data, ind, strategyKey) {
   const signalFn = STRATEGY_FN[strategyKey];
   const trades = [];
-  let position = null; // { entryDate, entryPrice, entryIndex }
-  const equity = []; // 累積報酬曲線（按交易筆數累加）
+  let position = null;
+  const equity = [];
   let cumReturn = 0;
   const buyMarkers = [], sellMarkers = [];
 
-  // 從 60 之後才開始（讓指標暖機）
   const startIdx = 60;
 
   for (let i = startIdx; i < data.length; i++) {
@@ -946,28 +1109,87 @@ function backtest(data, ind, strategyKey) {
     const today = data[i];
 
     if (!position && sig === 'BUY') {
-      // 用次日開盤價（但這是回測，我們簡化為當日收盤價）
-      position = { entryDate: today.date, entryPrice: today.close, entryIndex: i };
+      // 進場時，記錄當下訊號特徵（用於後續相似度比對）
+      position = {
+        entryDate: today.date,
+        entryPrice: today.close,
+        entryIndex: i,
+        // 階段式停利：用進場當天的布林上軌做為第一停利目標
+        firstTarget: ind.boll.upper[i],
+        secondTargetPct: 0.15, // +15%
+        halfTaken: false,
+        halfReturn: 0,
+        // 訊號特徵快照（給 C3 歷史相似度用）
+        snapshot: {
+          rsi: ind.rsi[i],
+          k: ind.kd.k[i],
+          d: ind.kd.d[i],
+          oscRatio: ind.macd.osc[i] / Math.abs(ind.macd.dif[i] || 1),
+          bbPos: (today.close - ind.boll.lower[i]) / (ind.boll.upper[i] - ind.boll.lower[i]),
+          maTrend: (ind.ma5[i] > ind.ma20[i] ? 1 : 0) + (ind.ma20[i] > ind.ma60[i] ? 1 : 0),
+          volRatio: today.volume / (data.slice(Math.max(0, i - 20), i).reduce((s, d) => s + d.volume, 0) / 20 || 1),
+        },
+      };
       buyMarkers.push({ x: today.date, y: today.close });
     } else if (position) {
-      // 停損條件：跌破進場價 -8%
+      const holdDays = i - position.entryIndex;
       const dropPct = (today.close - position.entryPrice) / position.entryPrice;
-      const shouldStopLoss = dropPct < -0.08;
-      const shouldExit = sig === 'SELL' || shouldStopLoss;
+
+      // === A3 動態停損：固定 -8% 與布林下軌取較緊的那個 ===
+      const fixedStopPrice = position.entryPrice * 0.92;
+      const bollStopPrice = ind.boll.lower[i];
+      // 取較緊（價格較高）= 較容易被觸發
+      const stopPrice = Math.max(fixedStopPrice, bollStopPrice || 0);
+      const shouldStopLoss = today.close <= stopPrice;
+
+      // === B2 階段式停利 ===
+      // 第一階段：第一次觸碰布林上軌 → 賣一半，鎖定一半利潤
+      const reachedFirst = !position.halfTaken && position.firstTarget &&
+                           today.close >= position.firstTarget;
+
+      // 第二階段：剩餘的部位等 +15% 或 MACD 死叉再出
+      const reachedSecond = position.halfTaken &&
+                           dropPct >= position.secondTargetPct;
+
+      // 訊號出場（MACD 死叉 etc.）但要求最少持有 3 天
+      const sigExit = sig === 'SELL' && holdDays >= MIN_HOLD_DAYS;
+
+      // 第一階段觸發：賣一半，記錄 half_return，繼續持有
+      if (reachedFirst && holdDays >= MIN_HOLD_DAYS) {
+        position.halfTaken = true;
+        position.halfReturn = (today.close - position.entryPrice) / position.entryPrice;
+        // 不平倉，繼續持有剩下一半
+        continue;
+      }
+
+      // 完整出場條件
+      const shouldExit = shouldStopLoss || reachedSecond || sigExit;
 
       if (shouldExit) {
-        const ret = (today.close - position.entryPrice) / position.entryPrice;
-        const holdDays = i - position.entryIndex;
+        const exitReturn = (today.close - position.entryPrice) / position.entryPrice;
+        // 如果有觸發過第一階段停利，最終報酬 = 50% × halfReturn + 50% × exitReturn
+        const finalReturn = position.halfTaken
+          ? (position.halfReturn * 0.5 + exitReturn * 0.5)
+          : exitReturn;
+
+        let reason = 'signal';
+        if (shouldStopLoss) reason = 'stop_loss';
+        else if (reachedSecond) reason = 'target_15pct';
+        else if (position.halfTaken && sig === 'SELL') reason = 'partial+signal';
+
         trades.push({
           entryDate: position.entryDate,
           entryPrice: position.entryPrice,
           exitDate: today.date,
           exitPrice: today.close,
           holdDays,
-          return: ret,
-          reason: shouldStopLoss ? 'stop_loss' : 'signal',
+          return: finalReturn,
+          reason,
+          halfTaken: position.halfTaken,
+          halfReturn: position.halfReturn,
+          snapshot: position.snapshot,
         });
-        cumReturn += ret;
+        cumReturn += finalReturn;
         equity.push({ x: today.date, y: cumReturn * 100 });
         sellMarkers.push({ x: today.date, y: today.close });
         position = null;
@@ -975,7 +1197,7 @@ function backtest(data, ind, strategyKey) {
     }
   }
 
-  // 若仍持有，以最後一日收盤評估
+  // 若仍持有
   let openPosition = null;
   if (position) {
     const lastBar = data[data.length - 1];
@@ -986,10 +1208,11 @@ function backtest(data, ind, strategyKey) {
       currentPrice: lastBar.close,
       holdDays: data.length - 1 - position.entryIndex,
       unrealizedReturn: ret,
+      halfTaken: position.halfTaken,
+      halfReturn: position.halfReturn,
     };
   }
 
-  // 統計
   const wins = trades.filter(t => t.return > 0);
   const losses = trades.filter(t => t.return <= 0);
   const winRate = trades.length ? (wins.length / trades.length) : 0;
@@ -998,7 +1221,6 @@ function backtest(data, ind, strategyKey) {
   const avgLoss = losses.length ? losses.reduce((s, t) => s + t.return, 0) / losses.length : 0;
   const avgHold = trades.length ? trades.reduce((s, t) => s + t.holdDays, 0) / trades.length : 0;
 
-  // 最大回撤（基於累積報酬曲線）
   let peak = 0, mdd = 0, runningCum = 0;
   for (const t of trades) {
     runningCum += t.return;
@@ -1062,6 +1284,97 @@ function detectTodaySignal(data, ind, strategyKey) {
   if (lower != null && close <= lower * 1.01) notes.push('觸碰布林下軌');
 
   return { signal: sig, notes };
+}
+
+// ============================================================
+// 「假如今日進場」計算
+// ============================================================
+function calcTodayEntryPlan(data, ind) {
+  const i = data.length - 1;
+  const close = data[i].close;
+  const upper = ind.boll.upper[i];
+  const lower = ind.boll.lower[i];
+
+  // A3 動態停損：固定 -8% 與布林下軌取較緊
+  const fixedStop = close * 0.92;
+  const bollStop = lower;
+  const stopPrice = Math.max(fixedStop, bollStop || 0);
+  const stopPct = (stopPrice - close) / close;
+
+  // B2 階段式停利
+  const firstTarget = upper;
+  const firstTargetPct = firstTarget ? (firstTarget - close) / close : 0;
+  const secondTarget = close * 1.15;
+  const secondTargetPct = 0.15;
+
+  // 風險報酬比（用第一階段停利為主）
+  const risk = Math.abs(stopPct);
+  const reward = firstTargetPct;
+  const rr = risk > 0 ? reward / risk : 0;
+
+  return {
+    entryPrice: close,
+    stopPrice,
+    stopPct,
+    firstTarget,
+    firstTargetPct,
+    secondTarget,
+    secondTargetPct,
+    riskReward: rr,
+  };
+}
+
+// ============================================================
+// 「歷史相似情境」C3 - 找過去最像今天的訊號
+// ============================================================
+function snapshotToday(data, ind) {
+  const i = data.length - 1;
+  return {
+    rsi: ind.rsi[i],
+    k: ind.kd.k[i],
+    d: ind.kd.d[i],
+    oscRatio: ind.macd.osc[i] / Math.abs(ind.macd.dif[i] || 1),
+    bbPos: (data[i].close - ind.boll.lower[i]) / (ind.boll.upper[i] - ind.boll.lower[i]),
+    maTrend: (ind.ma5[i] > ind.ma20[i] ? 1 : 0) + (ind.ma20[i] > ind.ma60[i] ? 1 : 0),
+    volRatio: data[i].volume / (data.slice(Math.max(0, i - 20), i).reduce((s, d) => s + d.volume, 0) / 20 || 1),
+  };
+}
+
+// 計算兩個 snapshot 的相似度（0~100，越高越像）
+function similarity(a, b) {
+  if (!a || !b) return 0;
+  // 用各維度的「歸一化差異」加權平均
+  const fields = [
+    { key: 'rsi', weight: 0.20, range: 100 },
+    { key: 'k', weight: 0.15, range: 100 },
+    { key: 'd', weight: 0.10, range: 100 },
+    { key: 'bbPos', weight: 0.20, range: 1.5 },
+    { key: 'oscRatio', weight: 0.15, range: 2 },
+    { key: 'maTrend', weight: 0.10, range: 2 },
+    { key: 'volRatio', weight: 0.10, range: 3 },
+  ];
+  let totalDiff = 0;
+  for (const f of fields) {
+    const va = a[f.key] ?? 0;
+    const vb = b[f.key] ?? 0;
+    const diff = Math.abs(va - vb) / f.range;
+    totalDiff += diff * f.weight;
+  }
+  // 差異 0 = 100% 相似；差異 1 = 0%
+  return Math.max(0, Math.min(100, (1 - totalDiff) * 100));
+}
+
+// 找最像今天的 N 筆歷史交易
+function findSimilarTrades(trades, todaySnap, n = 3) {
+  if (!trades.length) return [];
+  const scored = trades
+    .filter(t => t.snapshot)
+    .map(t => ({
+      ...t,
+      similarity: similarity(t.snapshot, todaySnap),
+    }))
+    .sort((a, b) => b.similarity - a.similarity);
+  return scored.slice(0, n);
 }
 
 // ============================================================
@@ -1243,6 +1556,139 @@ function renderTodayStatus() {
 }
 
 // ============================================================
+// 渲染：假如今日進場
+// ============================================================
+function renderEntryPlan() {
+  const plan = calcTodayEntryPlan(state.data, state.indicators);
+  const box = document.getElementById('entryPlanBox');
+
+  const sign = (n, suffix = '%') => (n >= 0 ? '+' : '') + (n * 100).toFixed(2) + suffix;
+
+  box.innerHTML = `
+    <div class="entry-plan">
+      <div class="plan-row">
+        <div class="plan-cell">
+          <div class="plan-label">進場參考價</div>
+          <div class="plan-value">${plan.entryPrice.toFixed(2)}</div>
+          <div class="plan-meta">今日收盤</div>
+        </div>
+        <div class="plan-cell stop">
+          <div class="plan-label">動態停損</div>
+          <div class="plan-value down">${plan.stopPrice.toFixed(2)}</div>
+          <div class="plan-meta">${sign(plan.stopPct)} · ${plan.stopPrice === plan.entryPrice * 0.92 ? '固定 -8%' : '布林下軌'}</div>
+        </div>
+      </div>
+      <div class="plan-row">
+        <div class="plan-cell take">
+          <div class="plan-label">第一階段停利 · 賣 1/2</div>
+          <div class="plan-value up">${plan.firstTarget?.toFixed(2) || '—'}</div>
+          <div class="plan-meta">${sign(plan.firstTargetPct)} · 觸碰布林上軌</div>
+        </div>
+        <div class="plan-cell take">
+          <div class="plan-label">第二階段停利 · 賣剩下</div>
+          <div class="plan-value up">${plan.secondTarget.toFixed(2)}</div>
+          <div class="plan-meta">${sign(plan.secondTargetPct)} 或 MACD 死叉</div>
+        </div>
+      </div>
+      <div class="plan-rr">
+        <span class="rr-label">風險報酬比 R:R</span>
+        <span class="rr-value">1 : ${plan.riskReward.toFixed(2)}</span>
+        <span class="rr-note">${plan.riskReward >= 2 ? '✓ 優' : plan.riskReward >= 1.5 ? '可接受' : '⚠ 偏低'}</span>
+      </div>
+      <div class="plan-disclaimer">
+        ⚠ 此為策略規則自動推算，不構成投資建議。實際進場請參考開盤價、成交量、產業消息等綜合判斷。
+      </div>
+    </div>
+  `;
+}
+
+// ============================================================
+// 渲染：歷史相似情境 C3
+// ============================================================
+function renderSimilarTrades() {
+  const result = getActiveResult();
+  const todaySnap = snapshotToday(state.data, state.indicators);
+  const similar = findSimilarTrades(result.trades, todaySnap, 3);
+
+  const box = document.getElementById('similarTradesBox');
+
+  if (!similar.length || !result.trades.length) {
+    box.innerHTML = `
+      <div class="similar-empty">
+        歷史交易不足，無法比對相似情境。<br>
+        建議拉長回測期間（2Y 或 3Y）取得更多樣本。
+      </div>
+    `;
+    return;
+  }
+
+  // 統計：相似訊號的後續走勢
+  const similarReturns = similar.map(t => t.return);
+  const avgSimReturn = similarReturns.reduce((a, b) => a + b, 0) / similarReturns.length;
+  const wins = similarReturns.filter(r => r > 0).length;
+
+  box.innerHTML = `
+    <div class="similar-summary">
+      <div class="similar-summary-text">
+        過去最像今天的 <span class="hi">${similar.length} 筆</span> 訊號中，
+        <span class="hi">${wins} 筆獲利、${similar.length - wins} 筆虧損</span>，
+        平均報酬 <span class="${avgSimReturn >= 0 ? 'up' : 'down'}">${avgSimReturn >= 0 ? '+' : ''}${(avgSimReturn * 100).toFixed(2)}%</span>
+      </div>
+    </div>
+    <div class="similar-list">
+      ${similar.map((t, idx) => {
+        const retClass = t.return >= 0 ? 'up' : 'down';
+        const sign = t.return >= 0 ? '+' : '';
+        const reasonLabel = {
+          'stop_loss': '⚠ 停損出場',
+          'target_15pct': '✓ +15% 達標',
+          'signal': 'MACD 死叉',
+          'partial+signal': '半倉鎖利後出場',
+        }[t.reason] || t.reason;
+        const snap = t.snapshot || {};
+        return `
+          <div class="similar-card">
+            <div class="similar-card-head">
+              <div class="similar-rank">#${idx + 1}</div>
+              <div class="similar-date">${t.entryDate}</div>
+              <div class="similar-score">相似度 ${t.similarity.toFixed(0)}%</div>
+            </div>
+            <div class="similar-snap">
+              <span>RSI ${snap.rsi?.toFixed(0) ?? '—'}</span>
+              <span>K ${snap.k?.toFixed(0) ?? '—'}</span>
+              <span>BB位置 ${snap.bbPos != null ? (snap.bbPos * 100).toFixed(0) + '%' : '—'}</span>
+              <span>量比 ${snap.volRatio?.toFixed(2) ?? '—'}x</span>
+            </div>
+            <div class="similar-result">
+              <div class="similar-result-row">
+                <span class="key">當時進場</span>
+                <span class="val">${t.entryPrice.toFixed(2)}</span>
+              </div>
+              <div class="similar-result-row">
+                <span class="key">${t.holdDays} 天後出場</span>
+                <span class="val">${t.exitPrice.toFixed(2)}</span>
+              </div>
+              <div class="similar-result-row">
+                <span class="key">出場原因</span>
+                <span class="val">${reasonLabel}</span>
+              </div>
+              <div class="similar-result-row final">
+                <span class="key">最終報酬</span>
+                <span class="val ${retClass}">${sign}${(t.return * 100).toFixed(2)}%</span>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('')}
+    </div>
+    <div class="similar-note">
+      💡 相似度由 RSI、KD、布林通道位置、MACD、均線排列、量能 等 7 項指標綜合計算。
+      歷史並不必然重演，但可協助你思考「上次這種型態，我會怎麼處理？」
+    </div>
+  `;
+}
+
+// ============================================================
 // 渲染：策略對比 (ALL 模式)
 // ============================================================
 function renderCompare() {
@@ -1296,6 +1742,7 @@ function switchStratTab(k) {
   activeTabStrat = k;
   renderStratTabs();
   renderBacktestStats();
+  renderSimilarTrades();
   renderPriceChart();
   renderEquityChart();
   renderTrades();
@@ -1693,6 +2140,8 @@ function renderResults() {
 
   renderStockHeader();
   renderTodayStatus();
+  renderEntryPlan();
+  renderSimilarTrades();
   renderCompare();
   renderStratTabs();
   renderBacktestStats();
